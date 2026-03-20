@@ -3,8 +3,8 @@
 @font-face {
   font-family: "Miama";
   src:
-    url("/fonts/Miama.woff2") format("woff2"),
-    url("/fonts/Miama.woff") format("woff");
+    url("../fonts/Miama.woff2") format("woff2"),
+    url("../fonts/Miama.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -14,8 +14,8 @@
 @font-face {
   font-family: "Battambang";
   src:
-    url("/fonts/Battambang-Black.woff2") format("woff2"),
-    url("/fonts/Battambang-Black.woff") format("woff");
+    url("../fonts/Battambang-Black.woff2") format("woff2"),
+    url("../fonts/Battambang-Black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -24,8 +24,8 @@
 @font-face {
   font-family: "Orbitron Medium";
   src:
-    url("/fonts/Orbitron-Medium.woff2") format("woff2"),
-    url("/fonts/Orbitron-Medium.woff") format("woff");
+    url("../fonts/Orbitron-Medium.woff2") format("woff2"),
+    url("../fonts/Orbitron-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -34,8 +34,8 @@
 @font-face {
   font-family: "Orbitron Bold";
   src:
-    url("/fonts/Orbitron-Bold.woff2") format("woff2"),
-    url("/fonts/Orbitron-Bold.woff") format("woff");
+    url("../fonts/Orbitron-Bold.woff2") format("woff2"),
+    url("../fonts/Orbitron-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -44,8 +44,8 @@
 @font-face {
   font-family: "Orbitron";
   src:
-    url("/fonts/Orbitron-Regular.woff2") format("woff2"),
-    url("/fonts/Orbitron-Regular.woff") format("woff");
+    url("../fonts/Orbitron-Regular.woff2") format("woff2"),
+    url("../fonts/Orbitron-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -54,8 +54,8 @@
 @font-face {
   font-family: "Raleway Italic";
   src:
-    url("/fonts/Raleway-Italic.woff2") format("woff2"),
-    url("/fonts/Raleway-Italic.woff") format("woff");
+    url("../fonts/Raleway-Italic.woff2") format("woff2"),
+    url("../fonts/Raleway-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -64,8 +64,8 @@
 @font-face {
   font-family: "Raleway Bold";
   src:
-    url("/fonts/Raleway-Bold.woff2") format("woff2"),
-    url("/fonts/Raleway-Bold.woff") format("woff");
+    url("../fonts/Raleway-Bold.woff2") format("woff2"),
+    url("../fonts/Raleway-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -74,8 +74,8 @@
 @font-face {
   font-family: "Raleway";
   src:
-    url("/fonts/Raleway-Regular.woff2") format("woff2"),
-    url("/fonts/Raleway-Regular.woff") format("woff");
+    url("../fonts/Raleway-Regular.woff2") format("woff2"),
+    url("../fonts/Raleway-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -84,8 +84,8 @@
 @font-face {
   font-family: "Raleway Medium";
   src:
-    url("/fonts/Raleway-Medium.woff2") format("woff2"),
-    url("/fonts/Raleway-Medium.woff") format("woff");
+    url("../fonts/Raleway-Medium.woff2") format("woff2"),
+    url("../fonts/Raleway-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -94,8 +94,8 @@
 @font-face {
   font-family: "Roboto";
   src:
-    url("/fonts/Roboto-Regular.woff2") format("woff2"),
-    url("/fonts/Roboto-Regular.woff") format("woff");
+    url("../fonts/Roboto-Regular.woff2") format("woff2"),
+    url("../fonts/Roboto-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -402,7 +402,7 @@ nav.no-shadow {
   gap: 1rem;
 }
 .hero-section .laferrari-heading {
-  background-image: url("/Images/Texturelabs_Fabric_198L.jpg");
+  background-image: url("../Images/Texturelabs_Fabric_198L.jpg");
   background-size: cover;
   background-position: bottom;
   background-clip: text;
@@ -477,7 +477,7 @@ nav.no-shadow {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url("/Images/8c6462357899c45f465e36e15e92ef111.jpg");
+  background-image: url("../Images/8c6462357899c45f465e36e15e92ef111.jpg");
   background-color: rgba(var(--bone-rgb), 0.85);
   background-blend-mode: lighten;
   background-size: clamp(24.75em, 110vw, 24.75em) auto;
