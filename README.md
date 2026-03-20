@@ -14,10 +14,12 @@ Link to project: https://aarav7s7c.github.io/Ferrari-LaFerrari-Landing-Page/
 
 #### Screenshots
 ##### Desktop
-![[image.png]]
+<img width="471" height="615" alt="image" src="https://github.com/user-attachments/assets/ea9dae4c-8865-4024-b125-09575c5aa874" />
+
 
 ##### Mobile
-![[image-3.png]]
+<img width="1358" height="615" alt="image" src="https://github.com/user-attachments/assets/2cc6a21f-14d6-43e4-bd1e-6e771b998cb8" />
+
 
 ## Features
 
