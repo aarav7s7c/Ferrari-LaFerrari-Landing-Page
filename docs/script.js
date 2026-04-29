@@ -1,72 +1,67 @@
 const openmodal = document.getElementById("open-modal");
-const modaloverlay = document.getElementsByClassName("modal-overlay")[0];
-const navmodal = document.getElementsByClassName("nav-modal")[0];
+const modaloverlay = document.querySelector(".modal-overlay");
+const navmodal = document.querySelector(".nav-modal");
 const nav = document.getElementById("noShadowNav");
-const menuicon = document.getElementsByClassName("menu-icon")[0];
+const menuicon = document.querySelector(".menu-icon");
 
-// One function to rule them all
-function toggleMenu() {
-  const isOpen = menuicon.classList.contains("close");
-
-  if (!isOpen) {
-    // OPENING
-    navmodal.classList.remove("no-display");
-    modaloverlay.classList.add("active");
-    modaloverlay.style.pointerEvents = "auto"; // Unlock overlay
-    nav.classList.add("no-shadow");
-    menuicon.classList.add("close");
-  } else {
-    // CLOSING
-    navmodal.classList.add("no-display");
-    modaloverlay.classList.remove("active");
-    modaloverlay.style.pointerEvents = "none"; // Lock overlay
-    nav.classList.remove("no-shadow");
-    menuicon.classList.remove("close");
-  }
+function setMenuState(shouldOpen) {
+  navmodal.classList.toggle("no-display", !shouldOpen);
+  modaloverlay.classList.toggle("active", shouldOpen);
+  nav.classList.toggle("no-shadow", shouldOpen);
+  menuicon.classList.toggle("close", shouldOpen);
 }
 
-// Attach the toggle to the button
-openmodal.addEventListener("click", toggleMenu);
+function toggleMenu() {
+  const isOpen = menuicon.classList.contains("close");
+  setMenuState(!isOpen);
+}
 
-// Close if clicking the overlay background
-window.onclick = function (event) {
-  if (event.target == modaloverlay) {
-    toggleMenu();
-  }
-};
-
-const navLinks = document.querySelectorAll(".nav-links-list a");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    toggleMenu();
+if (openmodal && modaloverlay && navmodal && nav && menuicon) {
+  openmodal.addEventListener("click", toggleMenu);
+  modaloverlay.addEventListener("click", (event) => {
+    if (event.target === modaloverlay) setMenuState(false);
   });
-});
 
-document.querySelectorAll('input[type="radio"]').forEach((radio) => {
-  radio.addEventListener("click", (e) => {
-    // If the radio was already checked before this click, uncheck it
-    if (radio.wasChecked) {
-      radio.checked = false;
-      radio.wasChecked = false;
-    } else {
-      // Mark this one as checked and reset others in the same group
-      document
-        .querySelectorAll(`input[name="${radio.name}"]`)
-        .forEach((r) => (r.wasChecked = false));
-      radio.wasChecked = true;
-    }
+  // One handler for nav close, instead of one listener per nav link.
+  navmodal.addEventListener("click", (event) => {
+    const clickedLink = event.target.closest(".nav-links-list a");
+    if (clickedLink) setMenuState(false);
   });
-  window.onload = () => {
-    if (radio.wasChecked) {
+}
+
+const radios = document.querySelectorAll('input[type="radio"]');
+if (radios.length > 0) {
+  // Cache radio groups once. This avoids querySelectorAll on every click.
+  const radioGroupsByName = new Map();
+  radios.forEach((radio) => {
+    radio.dataset.wasChecked = String(radio.checked);
+    if (!radioGroupsByName.has(radio.name)) radioGroupsByName.set(radio.name, []);
+    radioGroupsByName.get(radio.name).push(radio);
+  });
+
+  // One delegated click handler instead of one per radio input.
+  document.addEventListener("click", (event) => {
+    const radio = event.target.closest('input[type="radio"]');
+    if (!radio) return;
+
+    const group = radioGroupsByName.get(radio.name);
+    if (!group) return;
+
+    if (radio.dataset.wasChecked === "true") {
       radio.checked = false;
-      radio.wasChecked = false;
-    } else {
-      // Mark this one as checked and reset others in the same group
-      document
-        .querySelectorAll(`input[name="${radio.name}"]`)
-        .forEach((r) => (r.wasChecked = false));
-      radio.wasChecked = true;
+      radio.dataset.wasChecked = "false";
+      return;
     }
-  };
+
+    for (const item of group) item.dataset.wasChecked = "false";
+    radio.dataset.wasChecked = "true";
+  });
+}
+
+const nonCriticalImages = document.querySelectorAll(
+  ".benefits img, .reviews img, .lastCTA img",
+);
+nonCriticalImages.forEach((image) => {
+  image.loading = "lazy";
+  image.decoding = "async";
 });
