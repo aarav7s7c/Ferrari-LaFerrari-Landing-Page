@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" lang="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="docs/style.css" />
     <link rel="icon" href="Images/Ferrari-Logo-11.svg">
     <title>Ferrari LaFerrari</title>
   </head>
   <body>
-    <div class="modal-overlay" style="pointer-events: none;"></div>
+    <div class="modal-overlay"></div>
     <nav id="noShadowNav">
       <div class="nav-bar">
         <div class="menu-close-icon">
@@ -53,7 +53,7 @@
     <main>
     <div class="hero-section" id="hero-section">
       <div class="contents">
-        <h1 class="laferrari-heading" area-lable="Laferrari">LAFERRARI</h1>
+        <h1 class="laferrari-heading" aria-label="LaFerrari">LAFERRARI</h1>
         <h2 class="laferrari-subheading">Ferrari's Ultimate Expression</h2>
         <div class="group-cta-btns">
           <button class="primary-cta">Explore</button
@@ -282,7 +282,7 @@
           </figcaption>
       </figure>
   </div>
-      <div class="review-group for-left" area-hidden>
+      <div class="review-group for-left" aria-hidden="true">
         <figure>
         <blockquote>
           <p>LaFerrari feels engineered before it is styled. Every surface and every response exists for a reason rooted in performance.—</p>
@@ -341,7 +341,7 @@
           </figcaption>
       </figure>
     </div>
-    <div class="review-3">   <div class="review-group for-right" area-hidden> <figure>
+    <div class="review-3">   <div class="review-group for-right" aria-hidden="true"> <figure>
         <blockquote>
           <p>From a chassis perspective, the carbon monocoque is brutally honest. It prioritizes stiffness, feedback, and response over any form of forgiveness.—</p>
         </blockquote>
@@ -440,6 +440,6 @@
     </ul>
     </div>
   </footer>
-    <script src="docs/script.js"></script>
+    <script src="docs/script.js" defer></script>
   </body>
 </html>
